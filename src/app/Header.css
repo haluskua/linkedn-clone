@@ -1,12 +1,12 @@
-h2 {
-  color: orange;
-}
-
 .header {
+  position: sticky;
+  top: 0;
   display: flex;
   padding: 4px;
-  justify-content: space-around;
-  width: 60%;
+  justify-content: space-evenly;
+  width: 70%;
+  border-bottom: 1px solid rgb(211, 227, 238);
+  z-index: 999;
 }
 .header_left {
   display: flex;
