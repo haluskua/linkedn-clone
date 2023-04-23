@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
+import { gsap } from "gsap";
 import SearchIcon from "@mui/icons-material/Search";
 import "./Header.css";
 import Linkedin from "../images/linkedin.png";
@@ -10,10 +11,15 @@ import WorkIcon from "@mui/icons-material/Work";
 import MessageIcon from "@mui/icons-material/Message";
 
 function Header() {
+  const boxRef = useRef(null);
+  useEffect(() => {
+    gsap.to(boxRef.current, { duration: 1, x: 0, y: 5 });
+  }, []);
+
   return (
-    <div className="header">
+    <div ref={boxRef} className="header">
       <div className="header_left">
-        <img src={Linkedin} alt="Lnkn logo" />
+        <img src={Linkedin} alt="Linkedn logo" />
         <div className="header_search">
           <SearchIcon />
           <input type="text" />
